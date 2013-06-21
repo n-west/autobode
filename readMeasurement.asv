@@ -1,0 +1,17 @@
+function [measurementValue] = readMeasurement(scopeIP, measNum)
+    
+measCheckCommand = sprintf(':MEASUrement:MEAS%d:STATE?',measNum);
+measState = sendScopeMsg(scopeIP,'COMMAND',measCheckCommand);
+disp(measState)
+
+if( str2intmeasState ==  1 )
+    % turn measurement on
+    onCommand = sprintf('MEASUrement:MEAS%d:VALue?',measNum);
+    measurementValue = sendScopeMsg(scopeIP,'COMMAND',onCommand);
+else
+    measurementValue = -1;
+end
+
+end % function end
+
+% EOF

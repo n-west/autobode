@@ -1,0 +1,50 @@
+
+**** 03/14/11 20:49:57 ******* PSpice 16.3.0 (June 2009) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bpf"  [ C:\Users\nathan.west\Documents\school\systemsjunk\bpf-PSpiceFiles\SCHEMATIC1\bpf.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bpf.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Cadence\SPB_16.3\tools\PSpice\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC LIN 100 0 20000
+------------$
+ERROR -- Invalid value
+.PROBE V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source BPF
+X_U1A         N00235 N00277 N00586 N00620 N00259 LM358
+R_R_1         N00802 N00222  100 TC=0,0 
+R_R_f         N00222 N00259  3000 TC=0,0 
+R_R_b         N00277 N00259  20000 TC=0,0 
+R_R_a         0 N00277  15000 TC=0,0 
+R_R_2         0 N00235  200 TC=0,0 
+C_C_2         N00222 N00235  47u  TC=0,0 
+C_C_1         0 N00222  47u  TC=0,0 
+V_V1         N00802 0  
++SIN 0 2Vac 10k 0 0 0
+V_V2         N00620 0 -10Vdc
+V_V3         N00586 0 10Vdc
+
+**** RESUMING bpf.cir ****
+.END
+
